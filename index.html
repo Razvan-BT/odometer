@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odometer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="./js/jquery.js"></script>
+
+    <style>
+        .align-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .odometer {
+            color: blue;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="align-center">
+        <div class="odometer" id="my-odometer"></div>
+    </div>
+
+
+    <script>
+        var el = document.querySelector("#my-odometer");
+        var odometer = new Odometer({
+        el: el,
+        value: 0, // Initial value
+        format: '(.ddd)', // Format for the numbers
+        });
+
+        // Set the value you want to display
+        odometer.update(20000);
+    </script>
+</body>
+</html>
